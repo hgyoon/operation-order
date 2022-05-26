@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import './LandingPage.css';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
 
 function App() {
+  function handleClick(e){
+    e.preventDefault();
+    
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div class="LandingPage">
+      <Box sx={{ width: '100%', maxWidth: 1000 }}>
+       <Typography variant='h3' color="white" component="div" gutterBottom>
+          경계작전명령서 V1.0
+        </Typography>
+        <Button variant="contained">Get Started</Button>
+      </Box>
     </div>
+    
   );
 }
 
