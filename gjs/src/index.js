@@ -1,14 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import './LandingPage.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Typography from '@mui/material/Typography';
+//Router goes here
+import { BrowserRouter,
+         Routes,
+         Route,
+} from "react-router-dom";
+import Expenses from './routes/expenses';
+import Invoices from './routes/invoices';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element = {<App />} />
+      <Route path="expenses" element={<Expenses/>}/>
+      <Route path="invoices" element={<Invoices />}/>
+      <Route path="*"
+             element={
+              <main className='LandingPage'>
+                <Typography variant="h3" color="common.white">
+                  There's nothing here!
+                </Typography>
+              </main>
+             }
+      />
+    </Routes>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
